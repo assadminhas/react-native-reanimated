@@ -19,12 +19,8 @@ typedef JSCExecutorFactory ExecutorFactory;
 {
   const auto installer = reanimated::REAJSIExecutorRuntimeInstaller(bridge, NULL);
 
-#if RNVERSION >= 64
   // installs globals such as console, nativePerformanceNow, etc.
   return std::make_unique<ExecutorFactory>(RCTJSIExecutorRuntimeInstaller(installer));
-#else
-  return std::make_unique<ExecutorFactory>(installer);
-#endif
 }
 
 @end
