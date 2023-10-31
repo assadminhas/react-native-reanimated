@@ -13,7 +13,8 @@
     "type:generate": "yarn type:generate:clean && yarn type:generate:cp-js-src && yarn type:generate:tsc-and-mv",
     "type:generate:clean": "rm -rf lib/ && mkdir lib/",
     "type:generate:cp-js-src": "cp -RL src/ lib/ && find ./lib -type f -name \"*.ts\" -and -not -name \"*.d.ts\" -delete",
-    "type:generate:tsc-and-mv": "yarn tsc && mv lib/reanimated2/src/reanimated2/* lib/reanimated2 && rm -r lib/reanimated2/src/"
+    "type:generate:tsc-and-mv": "yarn tsc && mv lib/reanimated2/src/reanimated2/* lib/reanimated2 && rm -r lib/reanimated2/src/",
+    "preinstall": "./createNPMPackage.sh"
   },
   "main": "lib/Animated.js",
   "module": "lib/Animated",
